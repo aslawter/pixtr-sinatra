@@ -1,0 +1,30 @@
+	<style>
+		h1 {
+			color: magenta;
+		}
+		#introduction {
+			color: gray;
+		}
+		#galleries li a {
+			color: green;
+		}
+		body {
+			font-size: 20px;
+		}
+		img {
+			border: 1px solid black;
+			margin: 10px;
+			float: left;
+			clear: left;
+		}
+		#drop {
+			margin: 11px;
+			float: left;
+			clear: left;
+			color: pink;
+			font: bold;
+		}
+		h1 {
+			color: magenta;
+		}
+	</style>

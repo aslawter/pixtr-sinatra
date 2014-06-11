@@ -1,0 +1,21 @@
+<!Doctype HTML>
+<!--A gallery about dogs-->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pics of my dogs, yo!</title>
+	<link rel="stylesheet" href="application.css">
+	</head>
+<body>
+
+<h1>DOGS</h1>
+
+<p>This is a page with different kinds of dogs on it.</p>
+
+<% dog_images.each do | dog_image| %>
+<p><img src ="<%= dog_image %>" alt = "<% dog_image %>"></p>
+<% end %>
+
+
+</body>
+
