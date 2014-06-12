@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset ="UTF-8">
+	<title><%@gallery.name%></title>
+	<link rel="stylesheet" href="application.css">
+</head>
+<body>
+	<h1><%=@gallery.name%></h1>
+	<h2><a href="/galleries/<%= @gallery.id %>/edit">Edit Gallery Name</a></h2>
+	<form method = "POST" action="/galleries/<%= @gallery.id %>">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete this gallery (carefully)">
+	</form>
+	<% @images.each do |image| %>
+		<p><img src="<%= image.url %>" alt="<%= image.name %>"></p>
+	<% end %>
+</body>
+</html>
