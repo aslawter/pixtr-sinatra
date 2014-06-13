@@ -8,7 +8,7 @@ ActiveRecord::Base.establish_connection(
 	)
 
 class Gallery < ActiveRecord::Base
-	has_many :images
+	has_many :images, dependent: :destroy
 end
 
 class Image <ActiveRecord::Base
@@ -55,6 +55,26 @@ delete "/galleries/:id" do
 
 	redirect "/"
 end
+
+get "/galleries/:gallery_id/images/new" do
+	@gallery = Gallery.find(params[:gallery_id])
+
+	erb :new_image
+end
+
+post "/galleries/:gallery_id/images" do
+	image_url = params[:image]
+	gallery_hash = {gallery_id: params[:gallery_id]}
+	combined_hash = image_url.merge(gallery_hash)
+	Image.create(combined_hash)
+	
+	redirect "/galleries/#{params[:gallery_id]}"
+end
+
+
+
+
+
 
 
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--Add new image -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Add a new image</title>
+	<link rel="stylesheet" href="application.css">
+</head>
+<body>
+	<h2>Adding an image to <%= @gallery.name %> gallery</h2>
+	
+	<form method="POST" action="/galleries/<%= @gallery.id %>/images">
+	<label for="image_url">Image URL:</label>
+	<input id="image_url" type="text" name="image[url]">
+	<input type="submit" value="Create image">
+		</form>
+
+
+</body>
+</html>

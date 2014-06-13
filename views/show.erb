@@ -12,6 +12,10 @@
 		<input type="hidden" name="_method" value="DELETE">
 		<input type="submit" value="Delete this gallery (carefully)">
 	</form>
+
+	<p><a href="/galleries/<%= @gallery.id %>/images/new">Add image to this gallery</a></p>
+
+
 	<% @images.each do |image| %>
 		<p><img src="<%= image.url %>" alt="<%= image.name %>"></p>
 	<% end %>
