@@ -26,7 +26,6 @@ end
 get "/galleries/:id" do
 	@gallery = Gallery.find(params[:id]) 
 	@images = @gallery.images
-	
 	erb :show
 end
 
